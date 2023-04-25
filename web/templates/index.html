@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Hello from Flask</title>
+  <style>
+    .message {
+      padding: 10px;
+      margin: 5px;
+      background-color: #f3f3f3;
+    }
+
+    nav a {
+      color: #d64161;
+      font-size: 3em;
+      margin-left: 50px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Let me guess the language!</h1>
+
+  <form method="post">
+    <textarea name="content">
+      {{ request.form['content'] }}
+    </textarea>
+    <button type="submit">Submit</button>
+  </form>
+  {% if languages %}
+  <div>The language of your input is: <bold>{{languages}}</bold></div>
+  {% endif %}
+</body>
